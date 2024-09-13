@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storiiies Viewer</title>
+  <!-- Include StoriiiesViewer CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/@cogapp/storiiies-viewer@latest/dist/storiiies-viewer.css">
+  <!-- Include StoriiiesViewer JavaScript -->
+  <script src="https://unpkg.com/@cogapp/storiiies-viewer@latest/dist/umd/storiiies-viewer.js"></script>
+</head>
+<body>
+  <!-- Container for StoriiiesViewer -->
+  <div id="storiiies-viewer"></div>
+
+  <!-- Initialize StoriiiesViewer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Ensure StoriiiesViewer is available globally
+      if (typeof StoriiiesViewer !== 'undefined') {
+        const myViewer = new StoriiiesViewer({
+          container: "#storiiies-viewer",
+          manifestUrl: "https://gist.githubusercontent.com/Saira-A/48125a274e051bc58235fb73b309ccdf/raw/515226d8488820d29b3cabf43dffd19e1af72f4c/embed.json",
+        });
+      } else {
+        console.error('StoriiiesViewer is not loaded.');
+      }
+    });
+  </script>
+</body>
+</html>
+
